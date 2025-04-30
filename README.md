@@ -1473,3 +1473,12 @@ rules:
 }
 ```
 </details>
+
+# 给作者加鸡腿
+<img src="https://github.com/user-attachments/assets/3ea98afa-8a8e-4fe2-9158-6defe58fa2a8" alt="支付宝" width="30%" />
+
+<img src="https://github.com/user-attachments/assets/74fb35b5-30fc-45d5-ad3a-5a003996a244" alt="微信" width="30%" />
+
+# 机场推荐
+[Bitz Net](https://new.bnaffloop.com/#/register?code=HT0ALWZq)（仅次于一线机场，推荐打折时购买）  
+88 折优惠码：`512025`（有效期至 2025 年 5 月 2 日 23:59 分）
