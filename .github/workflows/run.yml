@@ -234,7 +234,7 @@ jobs:
 
       - name: Generate `mihomo` rule-set (mrs) and move .list files
         run: |
-          wget https://github.com/DustinWin/proxy-tools/releases/download/mihomo/mihomo-meta-linux-amd64.tar.gz -O - | tar -zxf - -C ./tools/
+          curl -L https://github.com/DustinWin/proxy-tools/releases/download/mihomo/mihomo-meta-linux-amd64v3.tar.gz | tar -zx -C ./tools/
           mv -f ./tools/CrashCore ./tools/mihomo
 
           cd ./tools/
@@ -260,9 +260,10 @@ jobs:
             echo "singbox_core_new_version=${{ env.singbox_core_last1_version }}" >> $GITHUB_ENV
             echo "singbox_ruleset_old_version=${{ env.singbox_rules_last2_version }}" >> $GITHUB_ENV
             echo "singbox_ruleset_new_version=${{ env.singbox_rules_last1_version }}" >> $GITHUB_ENV
+            echo "singbox_equal=true" >> $GITHUB_ENV
 
             # Generate `sing-box` rule_set (compatible)
-            wget "https://github.com/SagerNet/sing-box/releases/download/v${{ env.singbox_core_last2_version }}/sing-box-${{ env.singbox_core_last2_version }}-linux-amd64.tar.gz" -O - | tar -zxf - -C ./tools/
+            curl -L "https://github.com/SagerNet/sing-box/releases/download/v${{ env.singbox_core_last2_version }}/sing-box-${{ env.singbox_core_last2_version }}-linux-amd64.tar.gz" | tar -zx -C ./tools/
             mv -f "./tools/sing-box-${{ env.singbox_core_last2_version }}-linux-amd64/sing-box" ./tools/sing-box
             mkdir -p ./sing-box-ruleset-compatible/
             cd ./tools/
@@ -273,7 +274,7 @@ jobs:
 
             # Generate `sing-box` rule_set
             cd ../
-            wget "https://github.com/SagerNet/sing-box/releases/download/v${{ env.singbox_core_last1_version }}/sing-box-${{ env.singbox_core_last1_version }}-linux-amd64.tar.gz" -O - | tar -zxf - -C ./tools/
+            curl -L "https://github.com/SagerNet/sing-box/releases/download/v${{ env.singbox_core_last1_version }}/sing-box-${{ env.singbox_core_last1_version }}-linux-amd64.tar.gz" | tar -zx -C ./tools/
             mv -f "./tools/sing-box-${{ env.singbox_core_last1_version }}-linux-amd64/sing-box" ./tools/sing-box
             mkdir -p ./sing-box-ruleset/
             cd ./tools/
@@ -287,6 +288,7 @@ jobs:
             echo "singbox_core_new_version=${{ env.singbox_core_last2_version }}" >> $GITHUB_ENV
             echo "singbox_ruleset_old_version=${{ env.singbox_rules_last3_version }}" >> $GITHUB_ENV
             echo "singbox_ruleset_new_version=${{ env.singbox_rules_last2_version }}" >> $GITHUB_ENV
+            echo "singbox_equal=false" >> $GITHUB_ENV
 
             # Generate `sing-box` rule_set (compatible)
             wget "https://github.com/SagerNet/sing-box/releases/download/v${{ env.singbox_core_last3_version }}/sing-box-${{ env.singbox_core_last3_version }}-linux-amd64.tar.gz" -O - | tar -zxf - -C ./tools/
@@ -300,7 +302,7 @@ jobs:
 
             # Generate `sing-box` rule_set
             cd ../
-            wget "https://github.com/SagerNet/sing-box/releases/download/v${{ env.singbox_core_last2_version }}/sing-box-${{ env.singbox_core_last2_version }}-linux-amd64.tar.gz" -O - | tar -zxf - -C ./tools/
+            curl -L "https://github.com/SagerNet/sing-box/releases/download/v${{ env.singbox_core_last2_version }}/sing-box-${{ env.singbox_core_last2_version }}-linux-amd64.tar.gz" | tar -zx -C ./tools/
             mv -f "./tools/sing-box-${{ env.singbox_core_last2_version }}-linux-amd64/sing-box" ./tools/sing-box
             mkdir -p ./sing-box-ruleset/
             cd ./tools/
@@ -408,6 +410,7 @@ jobs:
           git push -f origin sing-box-ruleset-compatible
 
       - name: Release and upload `sing-box-ruleset` assets
+        if: ${{ env.singbox_equal == 'true' }}
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -417,6 +420,21 @@ jobs:
           body: |
             [sing-box 内核](https://github.com/SagerNet/sing-box) rule_set 规则集文件
             适用于 v${{ env.singbox_core_new_version }} 系列版本的 sing-box 内核（`"version": ${{ env.singbox_ruleset_new_version }}`）
+            规则集文件更新于 ${{ env.update_version }}
+          file_glob: true
+          file: ./sing-box-ruleset/*
+
+      - name: Release and upload `sing-box-ruleset` assets
+        if: ${{ env.singbox_equal == 'false' }}
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          release_name: sing-box-ruleset
+          tag: sing-box-ruleset
+          overwrite: true
+          body: |
+            [sing-box 内核](https://github.com/SagerNet/sing-box) rule_set 规则集文件
+            适用于 v${{ env.singbox_core_new_version }}（包含）+ 系列版本的 sing-box 内核（`"version": ${{ env.singbox_ruleset_new_version }}`）
             规则集文件更新于 ${{ env.update_version }}
           file_glob: true
           file: ./sing-box-ruleset/*
