@@ -36,13 +36,13 @@ jobs:
       - name: Clone Repository
         uses: actions/checkout@v6
 
-      - name: Checkout DustinWin/domain-list-custom
+      - name: Checkout `DustinWin/domain-list-custom`
         uses: actions/checkout@v6
         with:
           repository: DustinWin/domain-list-custom
           path: custom
 
-      - name: Checkout v2fly/domain-list-community
+      - name: Checkout `v2fly/domain-list-community`
         uses: actions/checkout@v6
         with:
           repository: v2fly/domain-list-community
