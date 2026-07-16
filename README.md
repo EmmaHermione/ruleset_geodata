@@ -65,14 +65,14 @@
   </tr>
   <tr>
     <td>geosite.dat</td>
-    <td><code>fakeip-filter</code>、<code>ads</code>、<code>private</code>、<code>trackerslist</code>、<code>microsoft-cn</code>、<code>apple-cn</code>、<code>google-cn</code>、<code>games-cn</code>、<code>games</code>、<del><code>netflix</code>、<code>disney</code>、<code>max</code>、<code>primevideo</code>、<code>appletv</code>、<code>youtube</code>、<code>tiktok</code>、<code>bilibili</code>、<code>spotify</code>、<code>media</code></del>、<code>ai</code>、<code>networktest</code>、<code>tld-proxy</code>、<code>gfw</code>、<code>proxy</code> 和 <code>cn</code></td>
+    <td><code>fakeip-filter</code>、<code>ads</code>、<code>private</code>、<del><code>trackerslist</code></del>、<code>microsoft-cn</code>、<code>apple-cn</code>、<code>google-cn</code>、<code>games-cn</code>、<code>games</code>、<del><code>netflix</code>、<code>disney</code>、<code>max</code>、<code>primevideo</code>、<code>appletv</code>、<code>youtube</code>、<code>tiktok</code>、<code>bilibili</code>、<code>spotify</code>、<code>media</code></del>、<code>ai</code>、<code>networktest</code>、<code>tld-proxy</code>、<code>gfw</code>、<code>proxy</code> 和 <code>cn</code></td>
     <td><a href="https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-geodata/geosite.dat">点此下载</a></td>
     <td><a href="https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@mihomo-geodata/geosite.dat">点此下载</a></td>
     <td><a href="https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-geodata/geosite.dat">点此下载</a></td>
   </tr>
   <tr>
     <td>geosite-lite.dat</td>
-    <td><code>fakeip-filter</code>（精简版）、<del><code>ads</code></del>、<code>private</code>、<code>trackerslist</code>、<code>microsoft-cn</code>、<code>apple-cn</code>、<code>google-cn</code>、<code>games-cn</code>、<code>games</code>、<del><code>netflix</code>、<code>disney</code>、<code>max</code>、<code>primevideo</code>、<code>appletv</code>、<code>youtube</code>、<code>tiktok</code>、<code>bilibili</code>、<code>spotify</code>、<code>media</code></del>、<code>ai</code>、<code>networktest</code>、<code>tld-proxy</code>、<code>gfw</code>、<code>proxy</code> 和 <code>cn</code></td>
+    <td><code>fakeip-filter</code>（精简版）、<del><code>ads</code></del>、<code>private</code>、<del><code>trackerslist</code></del>、<code>microsoft-cn</code>、<code>apple-cn</code>、<code>google-cn</code>、<code>games-cn</code>、<code>games</code>、<del><code>netflix</code>、<code>disney</code>、<code>max</code>、<code>primevideo</code>、<code>appletv</code>、<code>youtube</code>、<code>tiktok</code>、<code>bilibili</code>、<code>spotify</code>、<code>media</code></del>、<code>ai</code>、<code>networktest</code>、<code>tld-proxy</code>、<code>gfw</code>、<code>proxy</code> 和 <code>cn</code></td>
     <td><a href="https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-geodata/geosite-lite.dat">点此下载</a></td>
     <td><a href="https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@mihomo-geodata/geosite-lite.dat">点此下载</a></td>
     <td><a href="https://ghfast.top/https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-geodata/geosite-lite.dat">点此下载</a></td>

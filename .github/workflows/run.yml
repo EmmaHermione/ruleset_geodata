@@ -55,7 +55,7 @@ jobs:
         run: |
           mkdir -p ./tmp/ ./community/mydata/
           archs1=(ads private trackerslist microsoft-cn apple-cn google-cn games-cn games netflix disney max primevideo appletv youtube tiktok bilibili spotify media ai networktest tld-proxy gfw proxy cn)
-          archs2=(ads private trackerslist microsoft-cn apple-cn google-cn games-cn games ai networktest tld-proxy gfw proxy cn)
+          archs2=(ads private microsoft-cn apple-cn google-cn games-cn games ai networktest tld-proxy gfw proxy cn)
           archs3=(private microsoft-cn apple-cn google-cn games-cn gfw cn-lite)
 
           # Ready for `fakeip-filter` and `fakeip-filter-lite`
